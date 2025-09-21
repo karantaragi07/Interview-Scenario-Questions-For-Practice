@@ -12,6 +12,7 @@
 - [Advanced / Production-Level Concepts](#advanced--production-level-concepts)  
 - [Monitoring & Troubleshooting](#monitoring--troubleshooting)  
 - [Best Practices](#best-practices)  
+- [Commands / Cheatsheet](#commands-cheatsheet)  
 
 ---
 
@@ -176,3 +177,43 @@ Increase the number of partitions, add brokers, and balance load across consumer
 
 ---
 
+## **Commands / Cheatsheet** <a name="commands-cheatsheet"></a>
+
+<details>
+<summary>Click to expand common Kafka commands</summary>
+
+### ⚡ Kafka Broker Commands
+- Start ZooKeeper (if using ZooKeeper mode):  
+  `zookeeper-server-start.sh config/zookeeper.properties`
+- Start Kafka broker:  
+  `kafka-server-start.sh config/server.properties`
+- Stop Kafka broker:  
+  `kafka-server-stop.sh`
+
+### ⚡ Kafka Topic Commands
+- Create a topic:  
+  `kafka-topics.sh --create --topic my-topic --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1`
+- List all topics:  
+  `kafka-topics.sh --list --bootstrap-server localhost:9092`
+- Describe a topic (partitions, leaders, replicas):  
+  `kafka-topics.sh --describe --topic my-topic --bootstrap-server localhost:9092`
+- Delete a topic:  
+  `kafka-topics.sh --delete --topic my-topic --bootstrap-server localhost:9092`
+
+### ⚡ Kafka Producer & Consumer
+- Start a producer for a topic:  
+  `kafka-console-producer.sh --topic my-topic --bootstrap-server localhost:9092`
+- Start a consumer from the beginning of a topic:  
+  `kafka-console-consumer.sh --topic my-topic --from-beginning --bootstrap-server localhost:9092`
+- Consume with a consumer group:  
+  `kafka-console-consumer.sh --topic my-topic --group my-group --bootstrap-server localhost:9092`
+
+### ⚡ Kafka Utilities
+- Check consumer group offsets:  
+  `kafka-consumer-groups.sh --describe --group my-group --bootstrap-server localhost:9092`
+- Reset consumer group offsets:  
+  `kafka-consumer-groups.sh --reset-offsets --group my-group --topic my-topic --to-earliest --execute`
+- List consumer groups:  
+  `kafka-consumer-groups.sh --list --bootstrap-server localhost:9092`
+
+</details>
