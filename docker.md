@@ -292,4 +292,4 @@ Scan images before production deployment with Trivy/Snyk.
 
 ---
 
-> ⚡ **Tip:** Focus on **containers, images, Dockerfile, Compose, orchestration, CI/CD, production troubleshooting, security, and commands** — these are most frequently asked in 1–2 year experience interviews.
+> ⚡ **Tip:** Focus on **containers, images, Dockerfile, Compose, orchestration, CI/CD, production troubleshooting, security, and commands** 
