@@ -247,7 +247,49 @@ Scan images before production deployment with Trivy/Snyk.
 
 </details>
 
+<details>
+<summary><strong>10. Docker Commands Cheat Sheet</strong></summary>
+
+### 🔹 Container Management
+- Run container: `docker run -p 8080:8080 <image_name>`  
+- List running containers: `docker ps`  
+- Stop container: `docker stop <container_id>`  
+- Remove container: `docker rm <container_id>`  
+- Inspect container: `docker inspect <container_id>`  
+- View logs: `docker logs <container_id>`  
+- Restart container: `docker restart <container_id>`  
+- Commit container to image: `docker commit <container_id> <new_image_name>`  
+
+### 🔹 Image Management
+- Build image from Dockerfile: `docker build -t <image_name>:<tag> .`  
+- List images: `docker images`  
+- Pull image: `docker pull <image_name>`  
+- Push image: `docker push <username>/<image_name>:<tag>`  
+- Remove image: `docker rmi <image_name>`  
+- Tag image: `docker tag <image_name> <username>/<image_name>:<tag>`  
+
+### 🔹 Volumes & Storage
+- Create volume: `docker volume create <volume_name>`  
+- List volumes: `docker volume ls`  
+- Remove volume: `docker volume rm <volume_name>`  
+- Run container with volume: `docker run -v <volume_name>:/data <image_name>`  
+
+### 🔹 Networking
+- List networks: `docker network ls`  
+- Create network: `docker network create <network_name>`  
+- Connect container to network: `docker network connect <network_name> <container_name>`  
+- Disconnect container: `docker network disconnect <network_name> <container_name>`  
+
+### 🔹 System & Cleanup
+- Disk cleanup: `docker system prune`  
+- Remove all stopped containers: `docker container prune`  
+- Remove all unused images: `docker image prune`  
+- Remove all unused volumes: `docker volume prune`  
+- View Docker events: `docker events`  
+- Monitor containers: `docker stats`  
+
+</details>
+
 ---
 
-> ⚡ **Tip:** Focus on **containers, images, Dockerfile, Compose, orchestration, CI/CD, production troubleshooting, and security**
-
+> ⚡ **Tip:** Focus on **containers, images, Dockerfile, Compose, orchestration, CI/CD, production troubleshooting, security, and commands** — these are most frequently asked in 1–2 year experience interviews.
